@@ -3,12 +3,14 @@
 <head>
     <link rel="icon" href="лапка_иконка.webp">
     <link href="cat.css" type="text/css" rel="stylesheet">
+    <script src = "cat.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Love&Pets</title>
 </head>
 <body>
     <h1>Love&Pets</h1>
+    <div  class= "head">
     <p class="introduction">Добро пожаловать на наш сайт о породах кошек!
 
         Ищете идеального пушистого друга или хотите узнать о своем любимчике?<br>
@@ -18,11 +20,14 @@
         подходящую породу кошки.
         
         Присоединяйтесь к нашему сообществу и откройте для себя мир удивительных кошек!</p>
+
+        <p class ="test">Вы можете пройти небольшой тест, который определит какая порода вам больше всего подходит, исходя из предпочтений:
+            <a class ="a_test" href="test.html">Пройти тест</a></p>
+    </div>
         <div class="container">
             <div class="item">
                 <a href="persid.html">
                     <img src="фото кошек/persid.jpg" alt="Персидская" class="persid">
-                
                 <p class="description">Персидская</p></a>
             </div>
         
@@ -93,6 +98,26 @@
                     <img src="фото кошек/regdoll.jpg" alt="Регдолл" class="regdoll">
                 <p class="description">Регдолл</p></a>
             </div>
+        </div>
+
+        <div class = "calculator">
+            <h2>Калькулятор калорийности для кошки</h2>
+    <label for="weight">Вес кошки (кг):</label>
+    <input type="number" id="weight" required>
+
+    <label for="activity">Уровень активности:</label>
+    <select id="activity">
+        <option value="1.2">Сидячий образ жизни</option>
+        <option value="1.4">Умеренная активность</option>
+        <option value="1.6">Высокая активность</option>
+    </select>
+
+    <label for="calories">Калорийность корма (ккал/100г):</label>
+    <input type="number" id="calories" required>
+
+    <button onclick="calculateCalories()">Рассчитать</button>
+
+    <h3 id="result"></h3>
         </div>
 </body>
 </html>

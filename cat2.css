@@ -1,0 +1,125 @@
+html,
+[data-theme="light"]{
+    --text-heading1: #2a1f26;
+    --bg-color: #aa9aa5;
+    --text-color: #45303a;
+    --bg-ch: #ab97a1;
+    --text-colp:#210116;
+    --bg-ca:#99808c;
+    --bg-pl:#78656e;
+    --bg-mn:#78656e;
+    --visited-color:#362630;
+    --hover-color:#964f70;
+    --link-color: #362630;
+}
+
+[data-theme="dark"]{
+    --text-heading1: #3a0011;
+    --bg-color: #ad5f91;
+}
+body {
+    background-color: var(--bg-color);
+    font-family: Apple Chancery, cursive;    
+}
+a{  text-align: center;
+    padding: 10px;
+    text-decoration: none!important;
+    background-color: #cac3c8;
+}
+a:link{color: var(--link-color);}
+a:visited{color:var(--visited-color);}
+a:hover{color:var(--hover-color);}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        "hd hd hd hd"
+        "tx tx tx tx"
+        "ch ch ch ch"
+        "ca ca ca ca"
+        "pl pl mn mn";
+}
+
+.head {
+    display: grid;
+    text-align: left;
+    color: var(--text-heading1);
+    font-size: 45px;  
+    margin: 0;
+    padding-top: 50px;
+    padding-left:20px;
+    grid-area: hd;
+}
+
+.persid2 {
+    display: grid;
+    width: 400px; 
+    height: auto;
+    padding: 5px;
+}
+
+.text {
+    display: grid;
+    font-size: 25px;
+    color: var(--text-color);
+    padding-top: 30px;
+    padding-left: 15px;
+}
+
+.pers2 {
+    background-color: #c8b8c0;
+    margin: 10px;
+    grid-template-columns: 1fr 4fr;
+    border: 2px solid #6c5466;
+    display: grid;
+    grid-area: tx;
+}
+
+li {
+    color: var(--text-colp);
+}
+
+h2 {
+    text-align: center;
+    color: var(--text-colp);
+}
+
+.character {
+    display: grid;
+    grid-area: ch;
+    background-color: var(--bg-ch);
+    font-size: 150%;
+    margin: 10px;
+	padding: 10px;
+    border: 2px solid #6c5466;
+}
+
+.care {
+    display: grid;
+    grid-area: ca;
+    background-color: var(--bg-ca);
+    font-size: 150%;
+    margin: 10px;
+	padding: 10px;
+    border: 2px solid #6c5466;
+}
+
+.plus {
+    display: grid;
+    grid-area: pl;
+    background-color: var(--bg-pl);
+    font-size: 150%;
+    margin: 10px;
+	padding: 10px;
+    border: 2px solid #6c5466;
+}
+
+.minus {
+    display: grid;
+    grid-area: mn;
+    background-color: var(--bg-mn);
+    font-size: 150%;
+    margin: 10px;
+	padding: 10px;
+    border: 2px solid #6c5466;
+}

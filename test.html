@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script src = "cat.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест на подходящую породу кошки</title>
+</head>
+<body>
+    <a href = "cat.html">←Вернуться на главную страницу</a>
+    <h1>Тест на подходящую породу кошки</h1>
+    <form id="catTest">
+        <div>
+            <p>1. Какой у вас образ жизни?</p>
+            <label><input type="radio" name="q1" value="активный">Активный</label>
+            <label><input type="radio" name="q1" value="спокойный">Спокойный</label>
+        </div>
+        
+        <div>
+            <p>2. Какой тип шерсти вам нравится больше?</p>
+            <label><input type="radio" name="q2" value="длинная">Длинная</label>
+            <label><input type="radio" name="q2" value="средняя">Средняя</label>
+            <label><input type="radio" name="q2" value="короткая">Короткая</label>
+        </div>
+
+        <div>
+            <p>3. Сколько времени вы готовы уделять уходу за кошкой?</p>
+            <label><input type="radio" name="q3" value="много">Много</label>
+            <label><input type="radio" name="q3" value="умеренно">Умеренно</label>
+            <label><input type="radio" name="q3" value="минимально">Минимально</label>
+        </div>
+
+        <div>
+            <p>4. Предпочитаете ли вы активную кошку?</p>
+            <label><input type="radio" name="q4" value="да">Да</label>
+            <label><input type="radio" name="q4" value="нет">Нет</label>
+        </div>
+
+
+        <div>
+            <p>5. Какой уровень общения вы предпочитаете с домашним питомцем?</p>
+            <label><input type="radio" name="q5" value="высокий">Высокий</label>
+            <label><input type="radio" name="q5" value="умеренный">Умеренный</label>
+            <label><input type="radio" name="q5" value="низкий">Низкий</label>
+        </div>
+
+        <div>
+            <p>6. Какой тип темперамента кошки вам больше подходит?</p>
+            <label><input type="radio" name="q6" value="дружелюбный">Дружелюбный</label>
+            <label><input type="radio" name="q6" value="независимый">Независимый</label>
+        </div>
+
+        <button type="submit">Получить результат</button>
+
+        <div id="res"></div>
+    </form>
+
+    </body>
+</html>

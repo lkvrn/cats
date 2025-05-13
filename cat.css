@@ -1,9 +1,19 @@
 html,
 [data-theme="light"]{
-    --text-heading1: #ff00a6;
-    --text-heading2: #7c0038;
+    --text-heading1: #73034C;
+    --text-t: #66002E;
     --bg-color: #ffc5eb;
-    --bg-heading2:#ffaad0;
+    --bg-t:#f9adcf;
+    --bord-t: #fe9dc9;
+    --bg-test: #ffc3dd;  
+    --brd-test: #f8bdd8; 
+    --visited-color:#362630;
+    --hover-color:#c06690;
+    --link-color: #4a2d3f;
+    --bg-sel: #fce4f3;
+    --bord-sel: #c3679e;
+    --brd-cal: #81004e;
+    --bg-cal: #e7b2d2;
     
 }
 
@@ -15,26 +25,51 @@ html,
 body{
     background-color: var(--bg-color);
     font-family: Apple Chancery, cursive;
-    width: 100%;
-    height: 100%;
 }
 
 h1{
-    text-align: center;
+    text-align: left;
     color: var(--text-heading1);
-    -webkit-text-stroke: 4px #5a0021;
     font-size: 50px;  
     margin: 0;
-    padding: 0;
+    padding-left: 450px;
+}
+h2{
+    text-align: left;
+    color: var(--text-heading1);
+    font-size: 30px;
+
+}
+h3{
+    text-align: left;
+    color: var(--text-heading1);
+    font-size: 20px;
+}
+.introduction{
+    display: grid;
+    text-align: center;
+    font-size: 22px;
+    color: var(--text-t);
+    background-color: var(--bg-t);
+    border-top: 3px solid var(--bord-t);
+    border-bottom: 3px solid var(--bord-t);
+    margin: 10px;
+    padding: 0px;
+}
+.test{
+    background-color: var(--bg-test);
+    margin: 10px;
+    padding: 0px;
+    border: 3px solid var(--brd-test);
+    display: grid;
+    font-size: 22px;
+    text-align: center;
 }
 
-.introduction{
-    text-align: center;
-    font-size: 20px;
-    color: var(--text-heading2);
-    background-color: var(--bg-heading2);
-    margin: 0;
-    padding: 0;
+.head{
+    display: grid;
+     gap: 20px;
+    grid-template-columns: 3fr 1fr;
 }
 .container{
     display: grid;
@@ -44,16 +79,41 @@ h1{
 img {
     width: 100%; 
     height: 80%;
-    padding-top: 25px;
+    padding: 0px;
+    border:4px solid var(--bg-t);
 }
 .description {
     text-align: center;
-    font-size: 20px;
-    margin: 0;
-    padding: 0;
-    color: var(--text-heading2);
-    background-color: var(--bg-heading2);
+    font-size: 22px;
+    width: 101%;
+    margin: 0px;
+    padding: 0px;
+    color: var(--text-t);
+    background-color: var(--bg-t);
 }
-a{
-    text-decoration: none!important;
+a{text-decoration: none!important;}
+a:link{color: var(--link-color);}
+a:visited{color:var(--visited-color);}
+a:hover{color:var(--hover-color);}
+
+.calculator{
+    border: 3px solid var(--brd-cal);
+    background-color: var(--bg-cal);
+}
+
+label{
+    color: var(--text-t);
+    font-size: 20px;
+}
+select{
+    background-color: var(--bg-sel);
+    border-color: var(--bord-sel);
+    color: var(--text-t);
+    font-size: 15px;
+}
+button{
+    color: var(--text-t);
+    font-size: 15px;
+    border-color: var(--bord-t);
+    border-radius: 10%;
 }
