@@ -1,0 +1,131 @@
+[data-theme="light"]{
+    --bg-color: #e694b7;
+    --visited-color:#362630;
+    --hover-color:#964f70;
+    --link-color: #362630;
+    --bord-color:#362630;
+    --text-color: #450322;
+    --bg-button: #f6d6e1;
+    --koto-border: #ccc;
+    --koto-bg: #ffddeb;
+    --color-but:#ea6996;
+    --color-back: #f6c5d7;
+    --bord-sel: #ff6a99;
+    --bg-sel: #ffd5e4;
+}
+[data-theme="dark"]{
+    --bg-color: #52303f;
+    --visited-color:#fec0e6;
+    --hover-color:#f680b7;
+    --link-color: #f0aed6;
+    --bord-color:#362630;
+    --text-color: #f983ba;
+    --bg-button: #ea6996;
+    --color-but:#ea6996;
+    --koto-border: #3a182b;
+    --koto-bg: #2a131d;
+    --color-back: #9a6578;
+    --bord-sel: #ea6996;
+    --bg-sel: #ea6996;
+}
+
+body{
+    background-color: var(--bg-color);
+    font-family: Apple Chancery, cursive; 
+}
+.head{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+h1{
+    display: grid;
+    margin: 10px;
+    padding-left: 170px;
+    color: var(--text-color);
+}
+p{
+    color: var(--text-color);
+    font-size: 25px;
+}
+span{
+    color: var(--text-color);
+    font-size: 25px;
+}
+
+.back{  
+    display: grid;
+    font-size: 17px;
+    text-align: center;
+    padding-top: 10px;
+    margin: 5px;
+    height: 50px;
+    text-decoration: none!important;
+    background-color: var(--color-back);
+}
+.kototest{
+    text-align: center;
+    padding: 0px;
+    font-size: 20px;
+}
+
+a:link{color: var(--link-color);}
+a:visited{color:var(--visited-color);}
+a:hover{color:var(--hover-color);}
+
+.kototest div {
+    margin-bottom: 15px;
+}
+
+.kototest label {
+    display: grid;
+    padding-left: 40%;
+    padding-right: 40%;
+    margin: 5px 0;
+}
+
+.kototest input[type="radio"] {
+    opacity: 0;
+}
+
+.kototest input[type="radio"] + span {
+    position: relative;
+    padding: 10px;
+    border: 2px solid var(--koto-border);
+    background-color: var(--koto-bg);
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.kototest input[type="radio"]:checked + span {
+    background-color: #f67bac; 
+    border-color: #f66fa5; 
+    color: rgb(62, 0, 25); 
+}
+
+
+.kototest input[type="radio"] + span:hover {
+    background-color: #ff004c66; 
+    border-color: #ff004c66;
+}
+
+.res{
+    font-size: 25px;
+    padding: 25px;
+    color: var(--text-color);
+}
+button{
+    background-color: var(--bg-button);
+    border-radius: 10px; 
+    border:3px solid var(--color-but);
+    color: var(--text-t);
+    text-align: center;
+    font-size: 15px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+select{
+    background-color: var(--bg-sel);
+    border-color: var(--bord-sel);
+    color: var(--text-t);
+    font-size: 17px;
+}
