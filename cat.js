@@ -1,3 +1,33 @@
+document.addEventListener('DOMContentLoaded', function(){
+const Theme = document.getElementById('themeSelect');
+const ResetButton = document.getElementById('Button');
+const Element = document.documentElement;
+function setTheme(theme) {
+    Element.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+}
+
+window.addEventListener('load', function() {
+    const save = localStorage.getItem("theme");
+    if (save) {
+        setTheme(save);
+        Theme.value = save; 
+    }
+});
+
+Theme.addEventListener("change", function() {
+    setTheme(Theme.value);
+});
+
+ResetButton.addEventListener("click", function() {
+    localStorage.removeItem("theme");
+    setTheme("light"); 
+    Theme.value = "light"; 
+});
+});
+
+
+
 function calculateCalories() {
   const wei = parseFloat(document.getElementById('weight').value);
   const act = parseFloat(document.getElementById('activity').value);
@@ -5,9 +35,12 @@ function calculateCalories() {
   const bmr = 70 * Math.pow(wei, 0.75);
   const Calories = bmr * act;
   const grams = (Calories / (calor / 100)).toFixed(2);
-  document.getElementById('result').innerText = `Необходимое количество корма в  день: ${grams} г`;
+  if(grams >= 1){
+  document.getElementById('result').innerText = `Необходимое количество корма в  день: ${grams} г`;}
+    else{
+    document.getElementById('result').innerText = `Заполните пожалуйста все поля для ответа`;
+    }
 }
-
 
 document.getElementById('catTest').addEventListener('submit', function(event) {
             event.preventDefault();
@@ -98,7 +131,7 @@ document.getElementById('catTest').addEventListener('submit', function(event) {
                 score['Рэгдолл'] += 1;
             }
 
-            if (document.querySelector('input[name="q5"]:checked').value === 'выоский') {
+            if (document.querySelector('input[name="q5"]:checked').value === 'высокий') {
                 score['Мейн-кун'] += 1;
                 score['Сиамская'] += 1;
                 score['Шотландская вислоухая'] += 1;
@@ -146,5 +179,5 @@ document.getElementById('catTest').addEventListener('submit', function(event) {
                 }
             }
 
-            document.getElementById('res').innerText = `Вам подходит: ${bestBreeds.join(', ')}`;
+            document.getElementById('res').innerText = `Вам подходит: ${bestBreeds.join(', ')}!`;
         });
