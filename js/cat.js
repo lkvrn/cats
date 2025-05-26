@@ -45,38 +45,6 @@ document.addEventListener('DOMContentLoaded', function () { /*добавить �
     });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function calculateCalories() { /*калькулятор*/
     const wei = parseFloat(document.getElementById('weight').value);
     const act = parseFloat(document.getElementById('activity').value);

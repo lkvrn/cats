@@ -1,61 +1,76 @@
 html,
-[data-theme="light"]{
+[data-theme="light"] {
     --text-heading1: #2a1f26;
     --bg-color: #aa9aa5;
     --text-color: #45303a;
     --bg-text: #c8b8c0;
     --bg-ch: #ab97a1;
-    --text-colp:#210116;
-    --bg-ca:#99808c;
-    --bg-pl:#78656e;
-    --bg-mn:#78656e;
-    --visited-color:#362630;
-    --hover-color:#964f70;
+    --text-colp: #210116;
+    --bg-ca: #99808c;
+    --bg-pl: #78656e;
+    --bg-mn: #78656e;
+    --visited-color: #362630;
+    --hover-color: #964f70;
     --link-color: #362630;
     --bg-sel: #b7a7ac;
     --bord-sel: #6b6265;
-    --сolor-but:#ddced6;
+    --сolor-but: #ddced6;
 }
 
-[data-theme="dark"]{
+[data-theme="dark"] {
     --text-heading1: #c6c6c6;
     --bg-color: #272727;
     --text-color: #dad8d9;
     --bg-text: #605a5e;
     --bg-ch: #474044;
-    --text-colp:#dad8d9;
-    --bg-ca:#312d2f;
-    --bg-pl:#221f20;
-    --bg-mn:#221f20;
-    --visited-color:#362630;
-    --hover-color:#964f70;
+    --text-colp: #dad8d9;
+    --bg-ca: #312d2f;
+    --bg-pl: #221f20;
+    --bg-mn: #221f20;
+    --visited-color: #362630;
+    --hover-color: #964f70;
     --link-color: #362630;
     --bg-sel: #ada9aaa6;
     --bord-sel: #7c7376;
-    --сolor-but:#c8bbc1;
+    --сolor-but: #c8bbc1;
 }
+
 body {
     background-color: var(--bg-color);
-    font-family: Apple Chancery, cursive;    
+    font-family: Apple Chancery, cursive;
 }
-a{  text-align: center;
+
+a {
+    text-align: center;
     padding: 10px;
-    text-decoration: none!important;
+    text-decoration: none !important;
     background-color: #cac3c8;
 }
-p{
+
+p {
     color: var(--text-colp);
 }
-a:link{color: var(--link-color);}
-a:visited{color:var(--visited-color);}
-a:hover{color:var(--hover-color);}
-.theme{
+
+a:link {
+    color: var(--link-color);
+}
+
+a:visited {
+    color: var(--visited-color);
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+.theme {
     margin: 15px;
     margin-left: 0px;
 }
+
 .container {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         "hd hd hd hd"
         "tx tx tx tx"
         "ch ch pr3 pr3"
@@ -67,16 +82,16 @@ a:hover{color:var(--hover-color);}
     display: grid;
     text-align: left;
     color: var(--text-heading1);
-    font-size: 45px;  
+    font-size: 45px;
     margin: 0;
     padding-top: 50px;
-    padding-left:20px;
+    padding-left: 20px;
     grid-area: hd;
 }
 
 .cats {
     display: grid;
-    width: 400px; 
+    width: 400px;
     height: auto;
     padding: 5px;
 }
@@ -114,7 +129,7 @@ h2 {
     background-color: var(--bg-ch);
     font-size: 138%;
     margin: 10px;
-	padding: 10px;
+    padding: 10px;
     border: 2px solid #6c5466;
 }
 
@@ -124,7 +139,7 @@ h2 {
     background-color: var(--bg-ca);
     font-size: 140%;
     margin: 10px;
-	padding: 10px;
+    padding: 10px;
     border: 2px solid #6c5466;
 }
 
@@ -134,7 +149,7 @@ h2 {
     background-color: var(--bg-pl);
     font-size: 140%;
     margin: 10px;
-	padding: 10px;
+    padding: 10px;
     border: 2px solid #6c5466;
 }
 
@@ -144,29 +159,30 @@ h2 {
     background-color: var(--bg-mn);
     font-size: 140%;
     margin: 10px;
-	padding: 10px;
+    padding: 10px;
     border: 2px solid #6c5466;
 }
 
-.cat3{
+.cat3 {
     grid-area: pr3;
-    width: 98%; 
+    width: 98%;
     height: auto;
     margin-left: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-button{
+button {
     background-color: var(--сolor-but);
-    border-radius: 10px; 
-    border:3px solid var(--color-but);
+    border-radius: 10px;
+    border: 3px solid var(--color-but);
     color: var(--text-t);
     text-align: center;
     font-size: 15px;
     margin-left: 10px;
 }
-select{
+
+select {
     background-color: var(--bg-sel);
     border-color: var(--bord-sel);
     color: var(--text-t);
