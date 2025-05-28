@@ -1,35 +1,3 @@
-const apiUrl = "https://api.thecatapi.com/v1/images/search";
-const apiKey = "live_1UEbxpwZdY7ICUJvBPYq6ScmQtFOpscyA5TzldvCXac7p7DzXlMd2sMMv7XgM7Fr";
-
-document.getElementById('random-btn').addEventListener('click', randomCat);/*случайная картинка*/
-
-async function randomCat() {
-    try {
-        const response = await fetch(apiUrl, {
-            headers: {'x-api-key': apiKey}
-        });
-        if (!response.ok) {
-            throw new Error('Ошибка сети');
-        }
-        const data = await response.json();
-        displayCat(data[0]);
-    } 
-    catch (error) {
-        console.error('Ошибка:', error);
-    }
-}
-
-function displayCat(cat) {
-    const catGallery = document.getElementById('cat-random');
-    const img = document.createElement('img');
-    img.src = cat.url;
-    img.alt = 'Кошка';
-    img.style.width = '500px';
-    img.style.margin = '10px';
-    catGallery.innerHTML = '';
-    catGallery.appendChild(img);
-}
-
 document.addEventListener('DOMContentLoaded', function () { /*смена темы*/
     const Theme = document.getElementById('themeSelect');
     const ResetButton = document.getElementById('Button');
@@ -231,5 +199,3 @@ document.getElementById('catTest').addEventListener('submit', function (event) {
 
     document.getElementById('res').innerText = `Вам подходит: ${bestBreeds.join(', ')}!`;
 });
-
-
