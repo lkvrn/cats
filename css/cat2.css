@@ -199,17 +199,22 @@ select {
     }
 
     .link {
+        font-size: 12px;
+        width: 100px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 
     .back {
-        width: 200px;
+        margin-bottom: 5px;
+        width: 100px;
+    }
+    .linkbut{
+        margin-bottom: 5px;
     }
 
     .container {
         width: 100%;
-        margin-left: 15%;
         display: grid;
         grid-template-areas:
             "hd hd hd hd"
@@ -271,15 +276,15 @@ select {
         font-size: 100%;
         width: 100%;
         border: 2px solid #6c5466;
-        margin: 5px;
+        margin-top: 5px;
     }
 
     .care {
         display: grid;
         grid-area: ca;
         background-color: var(--bg-ca);
-        font-size: 140%;
-        margin: 10px;
+        font-size: 100%;
+        margin-top: 5px;
         padding: 10px;
         border: 2px solid #6c5466;
     }
@@ -288,13 +293,14 @@ select {
         display: grid;
         grid-area: pl;
         background-color: var(--bg-pl);
-        font-size: 140%;
-        margin: 10px;
+        font-size: 100%;
+        margin-top: 5px;
         padding: 10px;
         border: 2px solid #6c5466;
     }
 
     .minus {
+        margin-top: 5px;
         display: grid;
         grid-area: mn;
         background-color: var(--bg-mn);
@@ -309,7 +315,7 @@ select {
         height: auto;
         margin-left: 5px;
         margin-bottom: 10px;
-        margin: 5px;
+        margin-top: 5px;
     }
 
     button {

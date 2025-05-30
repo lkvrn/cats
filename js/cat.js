@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () { /*смена тем�
     });
 });
 
-document.addEventListener('DOMContentLoaded', function () { /*добавить фото кошки*/
+document.addEventListener('DOMContentLoaded', function () { /*добавление фото*/
     const catList = document.getElementById('catList');
     const addCatBtn = document.getElementById('addCatBtn');
 
@@ -34,11 +34,16 @@ document.addEventListener('DOMContentLoaded', function () { /*добавить �
         const imageUrl = document.getElementById('catImage').value;
         if (imageUrl) {
             const catItem = document.createElement('div');
-            catItem.innerHTML = `<img src="${imageUrl}">`;
+
+            const img = document.createElement('img');
+            img.src = imageUrl;
+            catItem.appendChild(img);
+
             const deleteBtn = document.createElement('button');
             deleteBtn.textContent = 'Удалить';
             deleteBtn.onclick = () => catList.removeChild(catItem);
             catItem.appendChild(deleteBtn);
+
             catList.appendChild(catItem);
             document.getElementById('catImage').value = '';
         }
