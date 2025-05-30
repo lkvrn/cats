@@ -1,3 +1,35 @@
+const apiUrl = "https://api.thecatapi.com/v1/images/search";
+const apiKey = "live_1UEbxpwZdY7ICUJvBPYq6ScmQtFOpscyA5TzldvCXac7p7DzXlMd2sMMv7XgM7Fr";
+
+document.getElementById('random-btn').addEventListener('click', randomCat);/*случайная картинка*/
+
+async function randomCat() {
+    try {
+        const response = await fetch(apiUrl, {
+            headers: {'x-api-key': apiKey}
+        });
+        if (!response.ok) {
+            throw new Error('Ошибка сети');
+        }
+        const data = await response.json();
+        displayCat(data[0]);
+    } 
+    catch (error) {
+        console.error('Ошибка:', error);
+    }
+}
+
+function displayCat(cat) {
+    const catGallery = document.getElementById('cat-random');
+    const img = document.createElement('img');
+    img.src = cat.url;
+    img.alt = 'Кошка';
+    img.style.width = '500px';
+    img.style.margin = '10px';
+    catGallery.innerHTML = '';
+    catGallery.appendChild(img);
+}
+
 document.addEventListener('DOMContentLoaded', function () { /*смена темы*/
     const Theme = document.getElementById('themeSelect');
     const ResetButton = document.getElementById('Button');
@@ -26,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () { /*смена тем�
     });
 });
 
-document.addEventListener('DOMContentLoaded', function () { /*добавление фото*/
+document.addEventListener('DOMContentLoaded', function () { /*добавить фото кошки*/
     const catList = document.getElementById('catList');
     const addCatBtn = document.getElementById('addCatBtn');
 
@@ -34,16 +66,11 @@ document.addEventListener('DOMContentLoaded', function () { /*добавлени
         const imageUrl = document.getElementById('catImage').value;
         if (imageUrl) {
             const catItem = document.createElement('div');
-
-            const img = document.createElement('img');
-            img.src = imageUrl;
-            catItem.appendChild(img);
-
+            catItem.innerHTML = `<img src="${imageUrl}">`;
             const deleteBtn = document.createElement('button');
             deleteBtn.textContent = 'Удалить';
             deleteBtn.onclick = () => catList.removeChild(catItem);
             catItem.appendChild(deleteBtn);
-
             catList.appendChild(catItem);
             document.getElementById('catImage').value = '';
         }
@@ -64,143 +91,3 @@ function calculateCalories() { /*калькулятор*/
         document.getElementById('result').innerText = `Заполните пожалуйста все поля для ответа`;
     }
 }
-
-document.getElementById('catTest').addEventListener('submit', function (event) { /*тест*/
-    event.preventDefault();
-    let score = {
-        'Персидская': 0,
-        'Мейн-кун': 0,
-        'Сиамская': 0,
-        'Британская короткошерстная': 0,
-        'Русская голубая': 0,
-        'Шотландская вислоухая': 0,
-        'Абиссинская': 0,
-        'Бенгальская': 0,
-        'Сфинкс': 0,
-        'Норвежская лесная': 0,
-        'Манчкин': 0,
-        'Рэгдолл': 0
-    };
-
-    if (document.querySelector('input[name="q1"]:checked').value === 'активный') {
-        score['Мейн-кун'] += 1;
-        score['Сиамская'] += 1;
-        score['Абиссинская'] += 1;
-        score['Бенгальская'] += 1;
-        score['Сфинкс'] += 1;
-        score['Норвежская лесная'] += 1;
-        score['Манчкин'] += 1;
-    }
-    else {
-        score['Британская короткошерстная'] += 1;
-        score['Русская голубая'] += 1;
-        score['Персидская'] += 1;
-        score['Шотландская вислоухая'] += 1;
-        score['Рэгдолл'] += 1;
-    }
-
-    if (document.querySelector('input[name="q2"]:checked').value === 'длинная') {
-        score['Персидская'] += 1;
-        score['Мейн-кун'] += 1;
-        score['Норвежская лесная'] += 1;
-        score['Рэгдолл'] += 1;
-    }
-    else if (document.querySelector('input[name="q2"]:checked').value === 'средняя') {
-        score['Шотландская вислоухая'] += 1;
-    }
-    else {
-        score['Бенгальская'] += 1;
-        score['Манчкин'] += 1;
-        score['Сфинкс'] += 1;
-        score['Русская голубая'] += 1;
-        score['Абиссинская'] += 1;
-        score['Сиамская'] += 1;
-        score['Британская короткошерстная'] += 1;
-    }
-
-    if (document.querySelector('input[name="q3"]:checked').value === 'много') {
-        score['Персидская'] += 1;
-        score['Норвежская лесная'] += 1;
-    }
-    else if (document.querySelector('input[name="q2"]:checked').value === 'умеренно') {
-        score['Мейн-кун'] += 1;
-        score['Шотландская вислоухая'] += 1;
-        score['Рэгдолл'] += 1;
-    }
-    else {
-        score['Сиамская'] += 1;
-        score['Британская короткошерстная'] += 1;
-        score['Русская голубая'] += 1;
-        score['Абиссинская'] += 1;
-        score['Бенгальская'] += 1;
-        score['Сфинкс'] += 1;
-        score['Манчкин'] += 1;
-    }
-
-    if (document.querySelector('input[name="q4"]:checked').value === 'да') {
-        score['Мейн-кун'] += 1;
-        score['Сиамская'] += 1;
-        score['Абиссинская'] += 1;
-        score['Бенгальская'] += 1;
-        score['Сфинкс'] += 1;
-        score['Норвежская лесная'] += 1;
-        score['Манчкин'] += 1;
-    }
-    else {
-        score['Британская короткошерстная'] += 1;
-        score['Русская голубая'] += 1;
-        score['Персидская'] += 1;
-        score['Шотландская вислоухая'] += 1;
-        score['Рэгдолл'] += 1;
-    }
-
-    if (document.querySelector('input[name="q5"]:checked').value === 'высокий') {
-        score['Мейн-кун'] += 1;
-        score['Сиамская'] += 1;
-        score['Шотландская вислоухая'] += 1;
-        score['Абиссинская'] += 1;
-        score['Бенгальская'] += 1;
-        score['Сфинкс'] += 1;
-        score['Манчкин'] += 1;
-        score['Рэгдолл'] += 1;
-    }
-    else if (document.querySelector('input[name="q5"]:checked').value === 'умеренный') {
-        score['Персидская'] += 1;
-        score['Русская голубая'] += 1;
-        score['Норвежская лесная'] += 1;
-    }
-    else {
-        score['Британская короткошерстная'] += 1;
-    }
-
-    if (document.querySelector('input[name="q6"]:checked').value === 'дружелюбный') {
-        score['Мейн-кун'] += 1;
-        score['Сиамская'] += 1;
-        score['Абиссинская'] += 1;
-        score['Бенгальская'] += 1;
-        score['Сфинкс'] += 1;
-        score['Манчкин'] += 1;
-        score['Рэгдолл'] += 1;
-        score['Персидская'] += 1;
-        score['Норвежская лесная'] += 1;
-    }
-    else {
-        score['Русская голубая'] += 1;
-        score['Британская короткошерстная'] += 1;
-        score['Шотландская вислоухая'] += 1;
-    }
-
-    let maxScore = -1;
-    let bestBreeds = [];
-
-    for (let breed in score) {
-        if (score[breed] > maxScore) {
-            maxScore = score[breed];
-            bestBreeds = [breed];
-        } else if (score[breed] === maxScore) {
-            bestBreeds.push(breed);
-        }
-    }
-
-    document.getElementById('res').innerText = `Вам подходит: ${bestBreeds.join(', ')}!`;
-});
