@@ -1,3 +1,32 @@
+document.addEventListener('DOMContentLoaded', function () { /*смена темы*/
+    const Theme = document.getElementById('themeSelect');
+    const ResetButton = document.getElementById('Button');
+    const Element = document.documentElement;
+    function setTheme(theme) {
+        Element.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+    }
+
+    window.addEventListener('load', function () {
+        const save = localStorage.getItem("theme");
+        if (save) {
+            setTheme(save);
+            Theme.value = save;
+        }
+    });
+
+    Theme.addEventListener("change", function () {
+        setTheme(Theme.value);
+    });
+
+    ResetButton.addEventListener("click", function () {
+        localStorage.removeItem("theme");
+        setTheme("light");
+        Theme.value = "light";
+    });
+});
+
+
 const apiUrl = "https://api.thecatapi.com/v1/images/search";
 const apiKey = "live_1UEbxpwZdY7ICUJvBPYq6ScmQtFOpscyA5TzldvCXac7p7DzXlMd2sMMv7XgM7Fr";
 
@@ -29,34 +58,6 @@ function displayCat(cat) {
     catGallery.innerHTML = '';
     catGallery.appendChild(img);
 }
-
-document.addEventListener('DOMContentLoaded', function () { /*смена темы*/
-    const Theme = document.getElementById('themeSelect');
-    const ResetButton = document.getElementById('Button');
-    const Element = document.documentElement;
-    function setTheme(theme) {
-        Element.setAttribute("data-theme", theme);
-        localStorage.setItem("theme", theme);
-    }
-
-    window.addEventListener('load', function () {
-        const save = localStorage.getItem("theme");
-        if (save) {
-            setTheme(save);
-            Theme.value = save;
-        }
-    });
-
-    Theme.addEventListener("change", function () {
-        setTheme(Theme.value);
-    });
-
-    ResetButton.addEventListener("click", function () {
-        localStorage.removeItem("theme");
-        setTheme("light");
-        Theme.value = "light";
-    });
-});
 
 document.addEventListener('DOMContentLoaded', function () { /*добавить фото кошки*/
     const catList = document.getElementById('catList');
